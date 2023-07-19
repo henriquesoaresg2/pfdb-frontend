@@ -1,0 +1,23 @@
+<div class="flex justify-center
+bg-white dark:bg-zinc-900">
+    <div class="w-screen h-screen max-w-screen-xl
+    text-zinc-800 dark:text-zinc-200">
+        <nav class="flex flex-row px-4">
+            <div class="flex flex-row w-fit rounded-b
+            bg-zinc-100 dark:bg-zinc-950">
+                <app-nav-item url="people" urlLabel="Pessoas" iconName="ri-team-fill" class="w-22 md:w-32" />
+                <!-- TODO: I'm going to implement other new buttons here to link other pages that currently don't exist -->
+                <!-- <app-nav-item url="people" urlLabel="Pessoas" iconName="ri-team-fill" class="w-22 md:w-32" />
+                <app-nav-item url="people" urlLabel="Pessoas" iconName="ri-team-fill" class="w-22 md:w-32" /> -->
+            </div>
+            <div class="flex flex-row flex-1 justify-end rounded-br
+            bg-zinc-100 dark:bg-zinc-950">
+                <!-- TODO: I'm going to implement this button logoff action when the authentication is implemented -->
+                <app-nav-item url="" urlLabel="Sair" iconName="ri-logout-box-fill" class="w-22 md:w-32 justify-self-end" />
+            </div>
+        </nav>
+        <div class="p-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
