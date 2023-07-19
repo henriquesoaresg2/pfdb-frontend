@@ -5,10 +5,12 @@ import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home.component";
 import { ComponentsModule } from "src/app/components/components-module.module";
 import { FormsModule } from "@angular/forms";
+import { PeoplePageComponent } from "./people-page/people-page.component";
 
 @NgModule({
     declarations: [
         HomeComponent,
+        PeoplePageComponent,
     ],
     providers: [],
     imports: [

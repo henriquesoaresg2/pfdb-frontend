@@ -1,0 +1,52 @@
+<div class="bg-zinc-100 dark:bg-zinc-950 p-4 flex flex-col w-full rounded">
+    <div class="border-b pb-2 mb-4 flex justify-between px-4
+    border-zinc-300 dark:border-zinc-700">
+        <h2 class="flex-1 mr-2 text-xl">Lista de Pessoas</h2>
+
+        <div class="flex flex-1 justify-end">
+            <input type="text" name="search-bar" id="search-bar" placeholder="Busque uma pessoa..."
+                [(ngModel)]="this.searchValue" [ngClass]="this.isSearchBarVisible ? 'scale-x-100' : 'scale-x-0'"
+                class="origin-right transition ease-in-out duration-700 delay-150 rounded-l
+                text-xs font-normal pl-2 outline-none border
+                bg-zinc-300 focus:bg-white text-zinc-800">
+            <button (click)="this.toggleSearchBar()" class="rounded-r px-1"
+                [ngClass]="this.isSearchBarVisible ? 'bg-zinc-200' : 'hover:bg-zinc-200 hover:dark:bg-zinc-900'">
+                <i class="text-xl"
+                    [ngClass]="this.isSearchBarVisible ? 'ri-close-fill text-zinc-800' : 'ri-search-fill'"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="people-list" class="grid gap-4">
+        <!-- <div *ngFor="let person of this.peopleList" class="flex flex-col flex-wrap justify-between items-center p-4 rounded overflow-x-auto -->
+        <div *ngFor="let person of this.peopleList" class="grid grid-cols-1 sm:grid-cols-12 rounded p-4
+        bg-zinc-200 dark:bg-zinc-900">
+            <div class="col-span-full sm:col-span-10 lg:col-span-11
+            grid grid-cols-12 place-items-center items-center">
+                <div class="flex col-span-full  md:col-span-2 w-full justify-center sm:justify-start">
+                    <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">ID: </p>
+                    <p>{{ person.id }}</p>
+                </div>
+                <div class="flex col-span-full md:col-span-6 w-full justify-center sm:justify-start">
+                    <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">Nome: </p>
+                    <p>{{person.name}}</p>
+                </div>
+                <div class="flex col-span-full md:col-span-3 w-full justify-center sm:justify-start">
+                    <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">CPF: </p>
+                    <p>{{person.cpf}}</p>
+                </div>
+            </div>
+
+            <div class="col-span-full sm:col-span-2 lg:col-span-1
+            flex sm:place-items-center justify-center sm:justify-end
+            w-full mt-2 sm:mt-0">
+                <button class="mr-2 px-2 py-1 bg-green-800 dark:bg-green-400 text-white dark:text-zinc-800 rounded">
+                    <i class="ri-edit-2-fill"></i>
+                </button>
+                <button class="px-2 py-1 bg-red-800 dark:bg-red-300 text-white dark:text-zinc-800 rounded">
+                    <i class="ri-delete-bin-2-fill"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
