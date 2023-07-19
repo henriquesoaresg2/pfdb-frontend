@@ -1,0 +1,71 @@
+<div class="bg-zinc-100 dark:bg-zinc-950 p-4 flex flex-col w-full rounded">
+    <div class="border-b pb-2 mb-4 flex justify-between px-4
+    border-zinc-300 dark:border-zinc-700">
+        <h2 class="flex-1 mr-2 text-xl">Nova Pessoa</h2>
+    </div>
+
+    <div id="person-add" class="grid gap-4 p-4">
+        <div class="grid gap-4">
+            <h3 class="font-bold">Dados da pessoa</h3>
+            <input type="text" placeholder="Nome" />
+            <input type="text" placeholder="CPF" />
+            <input type="text" placeholder="Data de nascimento" />
+        </div>
+
+        <div class="grid gap-4 mt-4">
+            <div class="flex justify-between items-end border-b border-zinc-300 dark:border-zinc-700 py-1">
+                <h3 class="font-bold">Dados de contatos</h3>
+                <button *ngIf="person.contacts.length > 1 && !newContactForm"
+                class="px-2 py-1 bg-green-800 dark:bg-green-300 text-white dark:text-zinc-800 rounded">
+                    <i class="ri-add-fill"></i>
+                </button>
+            </div>
+            <div class="grid gap-1" [ngClass]="newContactForm ? '' : 'hidden'">
+                <h4>Novo Contato</h4>
+                <div class="flex gap-4">
+                    <input type="text" placeholder="Nome" class="px-2 flex-1" [(ngModel)]="newContact.name" />
+                    <input type="text" placeholder="Telefone" class="px-2" [(ngModel)]="newContact.phone" />
+                    <input type="text" placeholder="Email" class="px-2" [(ngModel)]="newContact.email" />
+                    <button (click)="addContact()"
+                    class="px-2 py-1 bg-green-800 dark:bg-green-300 text-white dark:text-zinc-800 rounded">
+                        <i class="ri-save-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="grid gap-2" *ngIf="person.contacts.length > 0">
+                <h4>Lista de Contatos</h4>
+                <div *ngFor="let contact of person.contacts" class="grid grid-cols-1 sm:grid-cols-12 rounded p-4
+    bg-zinc-200 dark:bg-zinc-900">
+                    <div class="col-span-full sm:col-span-10 lg:col-span-11
+        grid grid-cols-12 place-items-center items-center">
+                        <div class="flex col-span-full  md:col-span-1 w-full justify-center sm:justify-start">
+                            <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">ID: </p>
+                            <p>{{ contact.id }}</p>
+                        </div>
+                        <div class="flex col-span-full md:col-span-4 w-full justify-center sm:justify-start">
+                            <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">Nome: </p>
+                            <p>{{contact.name}}</p>
+                        </div>
+                        <div class="flex col-span-full md:col-span-3 w-full justify-center sm:justify-start">
+                            <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">Telefone: </p>
+                            <p>{{contact.phone}}</p>
+                        </div>
+                        <div class="flex col-span-full md:col-span-3 w-full justify-center sm:justify-start">
+                            <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">Email: </p>
+                            <p>{{contact.email}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-full sm:col-span-2 lg:col-span-1
+        flex sm:place-items-center justify-center sm:justify-end
+        w-full mt-2 sm:mt-0">
+                        <button
+                            class="mr-2 px-2 py-1 bg-green-800 dark:bg-green-400 text-white dark:text-zinc-800 rounded">
+                            <i class="ri-edit-2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
