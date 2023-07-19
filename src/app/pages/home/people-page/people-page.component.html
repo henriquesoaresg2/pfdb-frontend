@@ -23,17 +23,21 @@
         bg-zinc-200 dark:bg-zinc-900">
             <div class="col-span-full sm:col-span-10 lg:col-span-11
             grid grid-cols-12 place-items-center items-center">
-                <div class="flex col-span-full  md:col-span-2 w-full justify-center sm:justify-start">
+                <div class="flex col-span-full  md:col-span-1 w-full justify-center sm:justify-start">
                     <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">ID: </p>
                     <p>{{ person.id }}</p>
                 </div>
-                <div class="flex col-span-full md:col-span-6 w-full justify-center sm:justify-start">
+                <div class="flex col-span-full md:col-span-4 w-full justify-center sm:justify-start">
                     <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">Nome: </p>
                     <p>{{person.name}}</p>
                 </div>
                 <div class="flex col-span-full md:col-span-3 w-full justify-center sm:justify-start">
                     <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">CPF: </p>
                     <p>{{person.cpf}}</p>
+                </div>
+                <div class="flex col-span-full md:col-span-3 w-full justify-center sm:justify-start">
+                    <p class="uppercase mr-1 font-semibold text-green-900 dark:text-green-200">Dt.Nasc.: </p>
+                    <p>{{person.birthdayDate}}</p>
                 </div>
             </div>
 
